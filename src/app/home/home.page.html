@@ -1,14 +1,25 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Orthus App
     </ion-title>
+    <ion-button slot="secondary" (click)="listPairedDevices()" size="large" color="light">
+        Scan 
+        <ion-icon name="search"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <h2> Aparelhos Disponiveis </h2>
+  <ion-list> 
+    <ion-button expand="full" color="primary" size="large" ion-item *ngFor="let device of pairedList" (click)="connect(device)">
+      <h3>{{ device.name || 'Unnamed' }}</h3>
+      <p>({{ device.id }})</p>
+    </ion-button>  
+   </ion-list> 
 </ion-content>
+
+<ion-footer>
+  <p></p>
+</ion-footer>

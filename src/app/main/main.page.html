@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login at Device: {{peripheral.name || 'Desconhecido'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label position="stacked">Usuario-Cliente</ion-label>
+        <ion-input type="text" name="sigla" [(ngModel)]="sigla" ></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Teste</ion-label>
+        <ion-input type="text" name="teste" [(ngModel)]="teste"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Corrente</ion-label>
+        <ion-input type="text" name="corrente" [(ngModel)]="ncorrente" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Corrente Maxima de saida</ion-label>
+        <ion-input type="text" name="mxoutcorrente" [(ngModel)]="Mxoutcorrente" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">K</ion-label>
+        <ion-input type="text" name="k" [(ngModel)]="k" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">B</ion-label>
+        <ion-input type="text" name="b" [(ngModel)]="b" ></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" color="light" size="large" (click)="start_process()">
+        Start Process
+      </ion-button>
+
+      <ion-button expand="full" color="light" size="large" (click)="change_value()">
+        Mudar Valores
+      </ion-button>
+
+      <ion-button expand="full" color="light" size="large" (click)="finalizar()">
+        Finalizar Processo
+      </ion-button>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <p> {{statusMessage}} </p>
+  </ion-toolbar>
+</ion-footer>
